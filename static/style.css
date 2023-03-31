@@ -1,0 +1,17 @@
+.cardImg {
+    position: relative;
+}
+
+.pred {
+    display: inline;
+    width: max-content;
+    padding: 5px 15px;
+    border-radius: 100vw;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+.pred::after {
+    content: '%';
+}
