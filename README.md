@@ -60,4 +60,4 @@ The website is ready to run on your local machine.
 <img width="337" alt="image" src="https://user-images.githubusercontent.com/76238641/229221000-092ed096-7bec-4ef2-b5df-3969f107d6a2.png">
 
 
-<img width="334" alt="image" src="https://user-images.githubusercontent.com/76238641/229221127-af30cf77-9c39-4429-89cf-f9ba02122f76.png">
+<img width="337" alt="image" src="https://user-images.githubusercontent.com/76238641/229221349-28488715-e765-4001-8482-04ac4d486ff8.png">
