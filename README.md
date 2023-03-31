@@ -48,7 +48,16 @@ The website is ready to run on your local machine.
 
 ## Demo
 
-<img width="341" alt="image" src="https://user-images.githubusercontent.com/76238641/229185798-7edeb6a8-57e5-470f-b476-4229e0e1d4ff.png">
+### Prediction
+
+<img width="332" alt="image" src="https://user-images.githubusercontent.com/76238641/229220456-8ead4ce9-45ff-44e7-936a-21e76d333a97.png">
 
 
-<img width="344" alt="image" src="https://user-images.githubusercontent.com/76238641/229189077-8c1dfba5-cea4-453a-b1e4-63baffaff4ab.png">
+<img width="335" alt="image" src="https://user-images.githubusercontent.com/76238641/229220570-5a48d9a9-65a0-464b-aa40-9675b80471b1.png">
+
+### Translation
+
+<img width="337" alt="image" src="https://user-images.githubusercontent.com/76238641/229221000-092ed096-7bec-4ef2-b5df-3969f107d6a2.png">
+
+
+<img width="334" alt="image" src="https://user-images.githubusercontent.com/76238641/229221127-af30cf77-9c39-4429-89cf-f9ba02122f76.png">
