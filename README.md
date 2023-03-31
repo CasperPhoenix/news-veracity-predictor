@@ -7,4 +7,4 @@ In addition, we have also implemented a translation feature that allows users to
 
 Overall, our project aims to help individuals stay informed and educated on the latest news and events happening around the world. As a student, I am proud to have developed a project that promotes the importance of trustworthy news sources and language accessibility.
 
-[Screenshot-2023-03-31-224207.png](https://postimg.cc/KRrnqb9S)
+<img width="341" alt="image" src="https://user-images.githubusercontent.com/76238641/229185798-7edeb6a8-57e5-470f-b476-4229e0e1d4ff.png">
