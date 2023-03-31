@@ -14,6 +14,7 @@ Overall, our project aims to help individuals stay informed and educated on the 
 ## Technologies
 
 - Python
+- API
 - Flask
 - Transformers - BERT , AutoTokenizer
 - Tensorflow , Keras
