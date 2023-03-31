@@ -2,6 +2,7 @@ import requests
 from flask import Flask, render_template,request
 import tokenModule
 import apikey
+import translation
 
 app = Flask(__name__)
 #put your api key instead
@@ -19,8 +20,18 @@ print("Done")
 @app.route("/home/<page>")
 def home(page=0):
     page = int(page)
-    
-    return render_template('home.html',page=int(page),data=data['articles'][int(page)], max=total_max,pred=prediction)
+    url = data['articles'][int(page)]['urlToImage']
+    desc = data['articles'][int(page)]['description']
+    title = data['articles'][int(page)]['title']
+    return render_template('home.html',page=int(page),data=data['articles'][int(page)],url=url,desc=desc,title=title, max=total_max,pred=prediction,path="")
+
+@app.route("/home/<page>/translate")
+def translated(page=0):
+    page = int(page)
+    url = data['articles'][int(page)]['urlToImage']
+    desc = translation.query(data['articles'][int(page)]['description'])
+    title = translation.query(data['articles'][int(page)]['title'])
+    return render_template('home.html',page=int(page),data=data['articles'][int(page)],url=url,title=title,desc=desc, max=total_max,pred=prediction,path="../")
 
 if __name__=="__main__":
     app.run(debug=True)

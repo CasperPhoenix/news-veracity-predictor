@@ -3,48 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>One Tap News</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{path}}../static/style.css">
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #48aaf0;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">One Tap News</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                </div>
-            </div>
-        </nav>
+        <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="{{path}}../static/icons8-news-50.png" width="50" height="50" class="d-inline-block align-top" alt="">
+      <p class="h4" style="display: inline;">One Tap News</p>
+    </a>
+  </nav>
         <div class="row justify-content-center">
             <div class="card" style="width: 30rem; margin-top: 1rem; padding-top: 1rem;">
-                <img src="{{data['urlToImage']}}" class="cardImg card-img-top mx-auto" alt="Unable to Load Image">
+                <img src="{{url}}" class="cardImg card-img-top mx-auto" alt="Unable to Load Image">
                 {% if pred[page][0][0]>0.5 %} 
                 <div class="pred" style="
                     background-color: lightgreen; color: darkgreen;
@@ -56,8 +30,8 @@
                 {% endif %}
                 
                 <div class="card-body">
-                <h5 class="card-title">{{data['title']}}</h5>
-                <p class="card-text">{{data['description']}}</p>
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{desc}}</p>
                 <div class="card-footer text-center">                      
                     <button class="btn btn-primary float-left" onclick="prev('{{page}}', '{{max}}')" id="Previous" style="color:white" >
                         Prev
@@ -67,6 +41,10 @@
                             id="center" style="color:white">
                         Center Button
                     </button> -->
+                    <button onclick="translated('{{page}}', '{{max}}')" class="btn btn-info float-right"
+                            id="Translate" style="color:white">
+                        Translate
+                    </button>
                       
                     <button onclick="next('{{page}}', '{{max}}')" class="btn btn-danger float-right"
                             id="Next" style="color:white">
@@ -77,10 +55,6 @@
         </div>
 
         <script>
-            function say() {
-                console.log("Hello")
-            }
-
             function prev(page, max) {
                 let pageCopy = parseInt(page)
                 let prevPage = (pageCopy+parseInt(max)-1)%parseInt(max)
@@ -94,6 +68,10 @@
                 console.log(nextPage)
                 console.log(max)
                 location.href=`/home/${nextPage}`
+            }
+            function translated(page,max) {
+                let pageCopy = parseInt(page)
+                location.href=`/home/${pageCopy}/translate`
             }
 
             async function pred() {
